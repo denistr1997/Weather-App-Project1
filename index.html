@@ -8,10 +8,13 @@
     <title>Weather App</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
+    <div class="nav">
+        <div class="digital-clock-app"></div>
+        <div class="weather-app"></div>
+    </div>
     <div class="card">
         <div class="search">
             <input type="text" class="search-bar" placeholder="Search...">
@@ -23,7 +26,7 @@
                 </svg></button>
         </div>
         <div class="weather">
-            <h1 class="City">Weather in Timisoara</h1>
+            <h1 class="city">Weather in Timisoara</h1>
             <div class="temp">20°C</div>
             <img src="" alt="" class="icon">
             <div class="description">Cloudy</div>
@@ -31,6 +34,8 @@
             <div class="wind">Wind speed: 6.2 km/h</div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
