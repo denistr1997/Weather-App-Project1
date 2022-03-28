@@ -24,6 +24,19 @@ body {
     width: 100%;
     max-width: 420px;
     margin: 1em;
+    opacity: 0;
+    animation: scale-up-center .9s cubic-bezier(.39, .575, .565, 1.000) both 0.5s;
+}
+
+@keyframes scale-up-center {
+    0% {
+        transform: scale(.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .search {
@@ -76,7 +89,7 @@ h1.temp {
 }
 
 .temp_circle {
-    background: linear-gradient(135deg, rgba(150, 150, 150, 0.22, #7c7c7c6b)));
+    background: linear-gradient(135deg, rgba(150, 150, 150, 0.22, #563440)));
     box-shadow: 5px 5px 15px 0 rgba(150, 150, 150, 0.2), 5px 5px 15px 0 rgba(255, 255, 255, 0.2);
     max-width: 300px;
     height: 300px;
@@ -148,6 +161,20 @@ hr.break {
     border-radius: 20px;
     text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
     box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.05), 3px 3px 5px rgba(0, 0, 0, 0.5);
+    transition: 0.2s ease-in-out;
+    opacity: 0;
+    animation: scale-up .9s cubic-bezier(.39, .575, .565, 1.000) both 1.5s;
+}
+
+@keyframes scale-up {
+    0% {
+        transform: scaleY(.4);
+        opacity: 0;
+    }
+    100% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
 }
 
 .clock .display {
