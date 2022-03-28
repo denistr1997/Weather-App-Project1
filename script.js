@@ -4,7 +4,7 @@ let weather = {
         fetch(
                 "https://api.openweathermap.org/data/2.5/weather?q=" +
                 city +
-                "&units=imperial&appid=" +
+                "&units=metric&appid=" +
                 this.apiKey
             )
             .then((response) => {
@@ -25,7 +25,7 @@ let weather = {
         document.querySelector(".icon").src =
             "https://openweathermap.org/img/wn/" + icon + ".png";
         document.querySelector(".description").innerText = description;
-        document.querySelector(".temp").innerText = temp + "°F";
+        document.querySelector(".temp").innerText = temp + "°C";
         document.querySelector(".humidity").innerText =
             "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerText =
@@ -50,3 +50,30 @@ document
     });
 
 weather.fetchWeather("Timisoara");
+
+// CLOCK JS
+setInterval(function() {
+    const clock = document.querySelector(".display");
+    let time = new Date();
+    let sec = time.getSeconds();
+    let min = time.getMinutes();
+    let hr = time.getHours();
+    let day = 'AM';
+    if (hr > 12) {
+        day = 'PM';
+        hr = hr - 12;
+    }
+    if (hr == 0) {
+        hr = 12;
+    }
+    if (sec < 10) {
+        sec = '0' + sec;
+    }
+    if (min < 10) {
+        min = '0' + min;
+    }
+    if (hr < 10) {
+        hr = '0' + hr;
+    }
+    clock.textContent = hr + ':' + min + ':' + sec + " " + day;
+});
